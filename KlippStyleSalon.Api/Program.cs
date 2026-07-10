@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using KlippStyleSalon.Api.Data;
+using KlippStyleSalon.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapBookingEndpoints();
 
 app.Run();
