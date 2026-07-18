@@ -11,12 +11,14 @@ A school exercise: a backend booking system for a hair salon, built with **ASP.N
 
 ## Project structure
 
+```
 KlippStyleSalon.Api/
 ├── Models/          # Data models (Booking)
 ├── Data/            # EF Core DbContext
 ├── Endpoints/       # API endpoint definitions
 ├── Migrations/      # EF Core migrations
-└── Program.cs       
+└── Program.cs    
+```
 
 ## API Endpoints
 
