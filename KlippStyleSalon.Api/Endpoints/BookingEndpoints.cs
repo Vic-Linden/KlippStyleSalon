@@ -17,5 +17,18 @@ public static class BookingEndpoints
             await db.SaveChangesAsync();
             return Results.Created($"/bookings/{booking.Id}", booking);
         });
+
+        app.MapDelete("/bookings/{id}", async (int id, AppDbContext db) =>
+        {
+            var booking = await db.Bookings.FindAsync(id);
+            if (booking is null)
+            {
+                return Results.NotFound();
+            }
+
+            db.Bookings.Remove(booking);
+            await db.SaveChangesAsync();
+            return Results.NoContent();
+        });
     }
 }
